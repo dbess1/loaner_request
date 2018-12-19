@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Loaner Item Pick Up</name>
+        <run_as display_value="Delante Dirty London Instance">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 01:00:00</run_period>
+        <run_start>2018-12-18 18:29:36</run_start>
+        <run_time>1970-01-01 05:00:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[var grLoaner = new GlideRecord('x_174022_loaner_loaner_request');
+
+var pickUpLeadTime = gs.getProperty('x_174022_loaner.pickup.leadtime', 24) * 60 * 60 * 1000;
+
+var noticeTime = new GlideDateTime(); // Instantiate a new Time object
+noticeTime.add(pickUpLeadTime);
+
+grLoaner.addQuery('state', 16);   // Awaiting Pickup
+grLoaner.addQuery('pick_up_reminder', ''); // Push the date everyday we are awaiting
+grLoaner.addQuery('start_date', '<=', noticeTime);
+grLoaner.query();
+
+var rightNow = new GlideDateTime();
+
+while(gr.next()) {
+	grLoaner.pick_up_reminder = rightNow;
+	grLoaner.update();
+	grLoaner.eventQueue(x_174022_loaner.pickUp, grLoaner, grLoaner.number, gs.getUserName());
+}
+
+
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>dbess</sys_created_by>
+        <sys_created_on>2018-12-18 18:57:55</sys_created_on>
+        <sys_id>7a3d2f4cdbaee30092105990cf96193f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Loaner Item Pick Up</sys_name>
+        <sys_package display_value="Loaner Request" source="x_174022_loaner">eafd5e57db86230092105990cf9619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">eafd5e57db86230092105990cf9619c5</sys_scope>
+        <sys_update_name>sysauto_script_7a3d2f4cdbaee30092105990cf96193f</sys_update_name>
+        <sys_updated_by>dbess</sys_updated_by>
+        <sys_updated_on>2018-12-18 18:57:55</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>
