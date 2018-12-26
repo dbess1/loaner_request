@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="task" label="Loaner Request" max_length="40" name="x_174022_loaner_loaner_request" sizeclass="5" type="collection">
+    <element extends="task" label="Loaner Request" max_length="40" name="x_174022_loaner_loaner_request" sizeclass="6" type="collection">
         <element label="Pick up reminder" max_length="40" name="pick_up_reminder" type="glide_date_time"/>
         <element label="End date" max_length="40" name="u_end_date" type="glide_date_time"/>
         <element label="Overdue count" max_length="40" name="u_overdue_count" type="integer"/>
