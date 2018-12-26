@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Impersonate the user: Beth Anglin with user Id: beth.anglin</description>
+        <display_name>Impersonate</display_name>
+        <inputs/>
+        <order>1</order>
+        <step_config display_value="Impersonate">071ee5b253331200040729cac2dc348d</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>dbess</sys_created_by>
+        <sys_created_on>2018-12-26 02:37:59</sys_created_on>
+        <sys_id>7aef55eedba2270092105990cf9619e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Impersonate</sys_name>
+        <sys_package display_value="Loaner Request" source="x_174022_loaner">eafd5e57db86230092105990cf9619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">eafd5e57db86230092105990cf9619c5</sys_scope>
+        <sys_update_name>sys_atf_step_7aef55eedba2270092105990cf9619e6</sys_update_name>
+        <sys_updated_by>dbess</sys_updated_by>
+        <sys_updated_on>2018-12-26 02:37:59</sys_updated_on>
+        <table/>
+        <test display_value="My First Loaner Request ATF Test">6a9f51eedba2270092105990cf961995</test>
+        <timeout/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=7aef55eedba2270092105990cf9619e6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>7aef55eedba2270092105990cf9619e6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>dbess</sys_created_by>
+        <sys_created_on>2018-12-26 02:37:59</sys_created_on>
+        <sys_id>492069eedba2270092105990cf961919</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>dbess</sys_updated_by>
+        <sys_updated_on>2018-12-26 02:37:59</sys_updated_on>
+        <value>46d44a23a9fe19810012d100cca80666</value>
+        <variable display_value="">586e2c4253e0220002c6435723dc3415</variable>
+    </sys_variable_value>
+</record_update>
